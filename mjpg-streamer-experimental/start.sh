@@ -24,10 +24,13 @@
 
 ## This example shows how to invoke mjpg-streamer from the command line
 
+cd /home/pi/mjpg-streamer/mjpg-streamer-experimental/
 export LD_LIBRARY_PATH="$(pwd)"
 #./mjpg_streamer -i "input_uvc.so --help"
 
-./mjpg_streamer -i "./input_uvc.so" -o "./output_http.so -w ./www"
+#./mjpg_streamer -i "./input_uvc.so" -o "./output_http.so -w ./www"
+#./mjpg_streamer -o "output_http.so -w ./www" -i "input_uvc.so -r 1280x960 -f 20 -q 80 -rot 180"
+./mjpg_streamer -o "output_http.so -w ./www" -i "input_uvc.so -r 960x1280 -f 10 -q 80 -rot 90"
 #./mjpg_streamer -i "./input_uvc.so -n -f 30 -r 1280x960"  -o "./output_http.so -w ./www" 
 #./mjpg_streamer -i "./input_uvc.so -n -f 30 -r 640x480 -d /dev/video0"  -o "./output_http.so -w ./www" &
 #./mjpg_streamer -i "./input_uvc.so -d /dev/video0" -i "./input_uvc.so -d /dev/video1" -o "./output_http.so -w ./www"
